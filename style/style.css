@@ -44,10 +44,25 @@ body{
 .header__burgermenu{
     width: 45px;
     display: none;
+    position: relative;
+    right: 0;
 }
 @media(max-width:768px){
     .header__menu{
-        display: none;
+        width: 150px;
+        height: 200px;
+        background: orange;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        right: 0;
+        transition: 1s;
+        transform: translateX(100%);
+    }
+    .header__menu.active{
+        transform: translateX(0);
     }
     .header__burgermenu{
         display: block;
@@ -255,4 +270,149 @@ body{
     font-size: 18px;
     line-height: 27px;
     color: #FFFFFF;
+}
+
+/* регистрационное поле  */
+
+.registr{
+    width: 100%;
+}
+.registr__container{
+    padding-top: 201px;
+
+}
+.registr__input__block{
+    width: 100%;
+    max-width: 1300px;
+    background: black;
+    border-radius: 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 60px 60px;
+}
+.registr__email{
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 27px;
+    color: #118DA8;
+}
+.registr__description{
+    width: 430px;
+    font-weight: 400;
+    font-size: 72px;
+    line-height: 79px;
+    letter-spacing: 2.88px;
+    color: #FFFFFF;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+}
+.registr__form{
+    width: 522px;
+    height: 82px;
+    background: #191919;
+    border: 1px solid #191919;
+    border-radius: 6px;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 29px;
+    color: rgba(255, 255, 255, 0.7);
+    padding-left: 19px;
+}
+::placeholder{
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 29px;
+    color: rgba(255, 255, 255, 0.7);
+}
+.registr__submit{
+    width: 87px;
+    height: 48px;
+    background: #118DA8;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 29px;
+    color: rgba(255, 255, 255, 0.7);
+}
+@media(max-width:1111px){
+    .registr__input__block{
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: center;
+        padding: 30px 30px;
+    }
+    .registr__form{
+        max-width: 500px;
+    }
+    .registr__description{
+       max-width: 1000px;
+    }
+}
+@media(max-width:581px){
+    .registr__form{
+        width: 350px;
+    }
+    .registr__description{
+        max-width: 300px;
+        font-size: 35px;
+        line-height: 40px;
+     }
+}
+@media(max-width:442px){
+    .registr__form{
+       width: 250px;
+    }
+    .registr__input__block{
+        padding: 10px 10px;
+    }
+}
+/* отзывы */
+.registr__content{
+    display: flex;
+    justify-content: center;
+    column-gap: 16px;
+    padding-top: 16px;
+}
+.registr__wrap{
+    padding-top: 200px;
+}
+.reviews{
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+    width: 423px;
+    height: 321px; 
+    background: #000000;
+    border-radius: 32px;
+    padding: 50px 50px;
+}
+.reviews__title{
+    font-weight: 400;
+    /* font-size: 36px; */
+    font-size: calc(var(--block) * 1.6);
+    /* line-height: 43px; */
+    line-height: calc(var(--block) * 1.8);
+    color: #FFFFFF;
+}
+.reviews__subtitle{
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 29px;
+    color: rgba(255, 255, 255, 0.7);
+
+}
+@media(max-width:900px){
+    .registr__content{
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+       row-gap: 16px;
+    }
+    .reviews{
+        flex: 1 1 auto;
+    }
 }
